@@ -4,7 +4,7 @@ import static ru.praktikum.model.constants.Colours.RED;
 import static ru.praktikum.model.constants.Discount.RED_APPLE_DISCOUNT;
 import static ru.praktikum.model.constants.Discount.ZERO_DISCOUNT;
 
-public final class Apple extends Food implements Discountable {
+public final class Apple extends Food {
     private final String colour;
 
     public Apple(int amount, double price, String colour) {

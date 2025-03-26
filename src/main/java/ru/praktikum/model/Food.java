@@ -1,6 +1,7 @@
 package ru.praktikum.model;
 
-public abstract class Food {
+//По рекомендации ревьюера использовал интерфейс в абстрактном классе
+public abstract class Food implements Discountable {
 
     protected int amount;
     protected double price;
@@ -22,5 +23,10 @@ public abstract class Food {
 
     public boolean isVegetarian() {
         return isVegetarian;
+    }
+
+    @Override
+    public double getDiscount(){
+        return 0;
     }
 }

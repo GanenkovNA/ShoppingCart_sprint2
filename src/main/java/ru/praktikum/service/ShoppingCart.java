@@ -1,6 +1,5 @@
 package ru.praktikum.service;
 
-import ru.praktikum.model.Discountable;
 import ru.praktikum.model.Food;
 
 public final class ShoppingCart {
@@ -18,13 +17,11 @@ public final class ShoppingCart {
         return totalPrice;
     }
 
+    //Метод был переработан из-за того, что `getDiscount()` теперь работает в классе `Food` по умолчанию
     public double getTotalPriceWithDiscount() {
         double totalPrice = 0;
         for (Food item : items) {
-            if (item instanceof Discountable)
-                totalPrice += item.getPrice() * (1 - ((Discountable) item).getDiscount() / 100) * item.getAmount();
-            else
-                totalPrice += item.getPrice() * item.getAmount();
+                totalPrice += item.getPrice() * (1 - item.getDiscount()/100) * item.getAmount();
         }
         return totalPrice;
     }
