@@ -20,8 +20,9 @@ public final class Main {
         ShoppingCart shopCart = new ShoppingCart(products);
 
         //Выводим информацию о корзине
-        System.out.println("Общая стоимость продуктов в корзине без скидок: " + shopCart.getTotalPriceWithoutDiscount() + " руб.");
-        System.out.println("Общая стоимость продуктов в корзине со скидками: " + shopCart.getTotalPriceWithDiscount() + " руб.");
-        System.out.println("Общая стоимость вегетарианских продуктов в корзине без скидок: " + shopCart.getTotalPriceVegetarian() + " руб.");
+        //По рекомендации ревьюера заменил `System.out.println()` на `System.out.printf()`
+        System.out.printf("Общая стоимость продуктов в корзине без скидок: %.2f руб. \n", shopCart.getTotalPriceWithoutDiscount());
+        System.out.printf("Общая стоимость продуктов в корзине со скидками: %.2f руб. \n", shopCart.getTotalPriceWithDiscount());
+        System.out.printf("Общая стоимость вегетарианских продуктов в корзине без скидок: %.2f руб. \n", shopCart.getTotalPriceVegetarian());
     }
 }
